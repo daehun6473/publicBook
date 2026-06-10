@@ -1,0 +1,4 @@
+export const SET_BOOKS = 'SET_BOOKS'
+export const  SET_TOTAL_COUNT = 'SET_TOTAL_COUNT'
+export const SET_LOADING = 'SET_LOADING'
+export const SET_SEARCH_PARAM = 'SET_SEARCH_PARAM'
