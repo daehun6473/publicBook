@@ -13,8 +13,7 @@
         </tr>
       </thead>
       <tbody>
-        //@click=getbookDetail(book.bookNo)
-        <tr v-for="book in books" :key="book.bookNo" class="selectBook">
+        <tr v-for="book in books" @click=getbookDetail(book.bookNo) :key="book.bookNo" class="selectBook">
           <td>{{ book.bookNo }}</td>
           <td>{{ book.title }}</td>
           <td>{{ book.author }}</td>
