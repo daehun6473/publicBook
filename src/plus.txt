@@ -1,0 +1,49 @@
+@Service
+@RequiredArgsConstructor
+public class BookService {
+
+    private final BookMapper bookMapper;
+    private final LibraryMapper libraryMapper;
+
+    public SearchResult getSearchResult() {
+
+        List<BookVO> books =
+                bookMapper.selectBookList();
+
+        List<LibraryVO> libraries =
+                libraryMapper.selectLibraryList();
+
+        SearchResult result =
+                new SearchResult();
+
+        result.setBooks(books);
+        result.setLibrary(libraries);
+        result.setTotalCount(books.size());
+
+        return result;
+    }
+}
+
+
+이렇게 작성시 이런 형태로 완성(!)
+
+
+{
+  "resultCode": "200",
+  "resultMessage": "SUCCESS",
+  "data": {
+    "library": [
+      {
+        "libraryNo": "1",
+        "title": "ulsanLibrary"
+      }
+    ],
+    "books": [
+      {
+        "bookNo": "1",
+        "title": "Java"
+      }
+    ],
+    "totalCount": 1
+  }
+}
